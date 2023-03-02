@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       <style>
+body {
+            background: url("https://ibb.co/xYTb5qL") no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+           
+       }
+       #output{
+           color: red;
+           font-size: 20px;
+           margin-left: 80%;
+           margin-top: 5%;
+           
+        }
+
+        #questionInput{
+            width: 400px;
+            margin-top: 30%;
+        }
+       </style>
+       
+
+    </head>
+    <body>
+      <input id="questionInput" type="text" placeholder="STILL SPØRSMÅL TIL DET ALLVITENDE ORAKEL HER" onkeydown="if(event.keyCode === 13)getAnswer()">
+<div id="output">
+
+</div>
+        
+        <script>
+            const outputDiv = document.getElementById('output');
+            const qInput = document.getElementById('questionInput');
+            const answerArray = ["mmmmmNEI.", "Joda. ", "Det er en mulighet dét...", "hehe", "...", "eh","YES! Kommer om 'fem minutter'."];
+            let randomAnswer;
+
+            function getAnswer(){
+                let randomIndex = Math.floor(Math.random()* answerArray.length -1 );
+                if(qInput.value == "jeg trenger hjelp"){
+                    outputDiv.innerHTML = answerArray[6];
+                }
+                else {
+                outputDiv.innerHTML = answerArray[randomIndex];
+                }
+              
+            }
+        </script>
+    </body>
+</html>

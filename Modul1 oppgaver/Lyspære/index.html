@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The POWER of the TERNARY OPERATOR!</title>
+</head>
+<body>
+    
+<div id="output"></div>
+
+<script>
+const outputDiv = document.getElementById("output");
+
+let onOrOff = false;
+let iAmTernary = "Avslått";
+let lights = "gray";
+
+
+drawHTML();
+function drawHTML(){
+    console.log(lights)
+ let html = ` 
+ <div style="background-color:${lights}">
+<button onclick="activateSwitch()">LYSBRYTER</button>
+</div>
+    ${iAmTernary}
+ `;
+ outputDiv.innerHTML = html;
+}
+
+
+function activateSwitch(){
+    onOrOff = !onOrOff;
+
+    iAmTernary = onOrOff == false ? "Avslått" : "Påslått";
+    lights = onOrOff == false ? "gray" : "yellow";
+    drawHTML();
+}
+</script>
+
+</body>
+</html>
